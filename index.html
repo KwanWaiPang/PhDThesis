@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Personal Blog of Kwan Wai-Pang">
+  <meta name="keywords" content="SLAM, Event Camera, Robotics">
+
+  <!-- 确保您已经设置了视口的meta标签用于自适应屏幕大小的 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kwan Wai-Pang's PhD Thesis</title>
+  <meta name="author" content="Kwan Wai-Pang " />
+
+  <!-- OpenGraph 用于更新页面-->
+  <meta property="og:site_name" content="Kwan Wai-Pang's PhD Thesis" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kwan Wai-Pang | PhD Thesis" />
+  <meta property="og:description" content="Welcome to My PhD Thesis 😊" />
+  <meta property="og:image" content="https://kwanwaipang.github.io/Poster_files/hku_logo.jpg" />
+
+  <meta property="og:locale" content="en" />
+
+  <meta name="google-site-verification" content="Jtxa1xy6N3_2RjVVFrZgXjPZ0AHklxJXQ1eQ6QXNWr8" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QX9D95NS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-R1QX9D95NS');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="https://kwanwaipang.github.io/Poster_files/hku_logo.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/main.js"></script>
+
+  
+  <!-- for paper card(对于要插入paper card) -->
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Lazy load -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.min.js"></script>
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="./static/css/paper_card.css">
+   <script src="./static/js/paper_card.js"></script>
+   
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://kwanwaipang.github.io/PhD-Thesis">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          
+          <a class="navbar-item" target="_blank" href="https://kwanwaipang.github.io/Mono-EIO">
+            Mono-EIO
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://kwanwaipang.github.io/PL-EVIO">
+            PL-EVIO
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://kwanwaipang.github.io/ESVIO">
+            ESVIO
+          </a>
+
+
+          <a class="navbar-item" target="_blank" href="https://kwanwaipang.github.io/EVI-SAM">
+            EVI-SAM
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://kwanwaipang.github.io/DEIO">
+            DEIO
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://arclab-hku.github.io/SuperEIO">
+            SuperEIO
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://deio-ppn.github.io/">
+            DEPN
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://arclab-hku.github.io/ecmd/">
+            ECMD Dataset
+          </a>
+
+          <a class="navbar-item" target="_blank" href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM">
+            HKU Dataset
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Event-based Vision for 6-DOF Pose Tracking and 3D Mapping</h1>
+
+          <!-- 作者 -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://kwanwaipang.github.io/" target="_blank">Weipeng Guan</a>
+            </span>
+            
+          </div>
+          
+          <!-- 单位 -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The University of Hong Kong</span>
+          </div>
+
+          <!-- 各种link -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=" "
+                   target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/KwanWaiPang/PhD-Thesis"
+                    target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Latex Code</span>
+                  </a>
+              </span> -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <!-- 图片放置 -->
+
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          ******
+        </div>
+        <!--/ Abstract. -->
+
+        <div class="content has-text-justified">
+          <h5 class="title is-5">Demo for Chapter2</h5>
+        <div>
+        <div align="center">
+          <table style="border: none; background-color: transparent;">
+            <tr align="center">
+              <td style="width: 40%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                 <video playsinline autoplay loop muted src="" poster="https://kwanwaipang.github.io/Mono-EIO/static/img/62de83c7d7e39.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                Uniform Event-corner Feature Detection
+              </td>
+              <td style="width: 52%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/Mono-EIO/static/img/Mono-EIO.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                  Mono-EIO in Challenging Situations
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+
+        <div class="content has-text-justified">
+          <h5 class="title is-5">Demo for Chapter3</h5>
+        <div>
+        <div align="center">
+          <table style="border: none; background-color: transparent;">
+            <tr align="center">
+              <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                  <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/SLAM_DEMO/PL-EVIO.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                  Quadrotor Flip Using Our PL-EVIO
+              </td>
+              <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/SLAM_DEMO/ESVIO.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                Quadrotor Flight Using Our ESVIO
+              </td>
+            </tr>
+          </table>
+          <figcaption>
+          </figcaption>
+        </div>
+
+        <div class="content has-text-justified">
+          <h5 class="title is-5">Demo for Chapter4</h5>
+        <div>
+        <div align="center">
+          <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/SLAM_DEMO/hybrid_posetracking.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="95%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+        <figcaption>  
+          Our Event-based Hybrid Pose Tracking in HDR and aggressive motion
+        </figcaption>
+        </div>
+        <br>
+        <!-- <div align="center">
+          <table style="border: none; background-color: transparent;">
+            <tr align="center">
+              <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                  <div align="center" style="
+                  position: relative; 
+                  width: 100%; 
+                  height: 200px;
+                  margin: 0 auto;
+                  border-radius: 15px;
+                  background: url('https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif') center/contain no-repeat;
+                  ">
+                  <iframe width="100%" height="100%"
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=749386579&bvid=BV15C4y1w75n&cid=1357564953&p=1" 
+                    title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="opacity: 0; transition: opacity 0.5s; border-radius: 15px;" onload="this.style.opacity='1'"
+                  ></iframe>
+                  </div>
+                  Our Event-based Hybrid Pose Tracking in HDR and aggressive motion
+              </td>
+              <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                  <div align="center" style="
+                    position: relative; 
+                    width: 100%; 
+                    height: 200px;
+                    margin: 0 auto;
+                    border-radius: 15px;
+                    background: url('https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif') center/contain no-repeat;
+                    ">
+                    <iframe width="100%" height="100%"
+                      src="//player.bilibili.com/player.html?isOutside=true&aid=324440557&bvid=BV1cw41187bE&cid=1357564951&p=1" 
+                      title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="opacity: 0; transition: opacity 0.5s; border-radius: 15px;" onload="this.style.opacity='1'"
+                    ></iframe>
+                  </div>
+                Our Event-based Hybrid Pose Tracking with Dynamic Object
+              </td>
+            </tr>
+          </table>
+        </div> -->
+
+        <div class="content has-text-justified">
+          <h5 class="title is-5">Demo for Chapter5</h5>
+        <div>
+          <div align="center">
+            <table style="border: none; background-color: transparent;">
+              <tr align="center">
+                <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                    <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/DEIO/static/video/deio_fpv.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                    Evaluating DEIO in Drone Flying
+                </td>
+                <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                  <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/DEIO/static/video/HKU_agg_small_flip.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                   Evaluating DEIO in Aggerssive Motion
+                </td>
+              </tr>
+            </table>
+            <figcaption>
+            </figcaption>
+          </div>
+
+          <div class="content has-text-justified">
+            <h5 class="title is-5">Demo for Chapter6</h5>
+          <div>
+            <div align="center">
+              <table style="border: none; background-color: transparent;">
+                <tr align="center">
+                  <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                      <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/SLAM_DEMO/evi_sam.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                      Real-time Event-based Dense Mapping
+                  </td>
+                  <td style="width: 50%; border: none; padding: 0.01; background-color: transparent; vertical-align: middle;">
+                    <video playsinline autoplay loop muted src="https://kwanwaipang.github.io/SLAM_DEMO/aggressive_mapping.mp4" poster="https://kwanwaipang.github.io/File/Representative_works/loading-icon.gif" alt="sym" width="100%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+                     Event-based Dense Mapping under Fast Motion
+                  </td>
+                </tr>
+              </table>
+              <figcaption>
+              </figcaption>
+            </div>
+
+      </div>
+    </div>
+    
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Related Publication Lists</h2>
+    </div>
+
+    <div class="container">
+      <!-- Filters Bar -->
+      <div class="filters">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search papers by title or authors...">
+            <button class="clear-search-btn" onclick="clearSearch()" title="Clear search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <select id="yearFilter" class="filter-select">
+            <option value="all">All Years</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+        </select>
+      </div>
+
+      <!-- Tag Filters -->
+      <div class="tag-filters" id="tagFilters">
+        <div class="tag-filter" data-tag="Event-based Vision">Event-based Vision</div>
+        <div class="tag-filter" data-tag="SLAM">SLAM</div>
+        <div class="tag-filter" data-tag="Robotics">Robotics</div>
+        <div class="tag-filter" data-tag="Event Camera">Event Camera</div>
+        <div class="tag-filter" data-tag="Dense Mapping">3D Dense Mapping</div>
+        <div class="tag-filter" data-tag="6 DoF Pose Tracking">6DoF Pose Tracking</div>
+        <div class="tag-filter" data-tag="Deep Learning">Deep Learning</div>
+        <div class="tag-filter" data-tag="EIO">Event-Inertial Odometry</div>
+        <div class="tag-filter" data-tag="EVIO">Event-Visual-Inertial Odometry</div>
+        <div class="tag-filter" data-tag="VIO">Visual-Inertial Odometry</div>
+        <div class="tag-filter" data-tag="Monocular">Monocular</div>
+        <div class="tag-filter" data-tag="Stereo">Stereo</div>
+        <div class="tag-filter" data-tag="Drone">Drone</div>
+        <div class="tag-filter" data-tag="Autonomous Driving">Autonomous Driving</div>
+        <div class="tag-filter" data-tag="Feature-based Methods">Feature-based Methods</div>
+        <div class="tag-filter" data-tag="Feature-based Methods">Direct-based Methods</div>
+        <div class="tag-filter" data-tag="LiDAR">LiDAR</div>
+        <div class="tag-filter" data-tag="Image Sensor">Image Sensor</div>
+        <div class="tag-filter" data-tag="3DGS">3D Gaussian Splatting</div>
+        <div class="tag-filter" data-tag="Sensor Fusion">Sensor Fusion</div>
+        <div class="tag-filter" data-tag="Perception">Perception</div>
+        <div class="tag-filter" data-tag="Computer Vision">Computer Vision</div>
+      </div>
+    
+    
+      <!-- Paper Cards -->
+      <div class="papers-grid">
+        <div class="paper-row" data-id="SuperEIO" data-title="SuperEIO: Self-Supervised Event Feature Learning for Event Inertial Odometry" data-authors="Peiyu Chen, Fuling Lin,Weipeng Guan, Peng Lu" data-year="2025" data-tags='["Event-based Vision", "Deep Learning", "Feature-based Methods", "EIO", "Monocular", "6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'SuperEIO', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\SuperEIO.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">SuperEIO: Self-Supervised Event Feature Learning for Event Inertial Odometry <span class="paper-year">(2025)</span></h2>
+              <p class="paper-authors">Peiyu Chen, Fuling Lin,Weipeng Guan, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Event-based Vision</span>
+                  <span class="paper-tag">Deep Learning</span>
+                  <span class="paper-tag">EIO</span>
+                </div>
+              <div class="paper-links"><a href="https://arxiv.org/pdf/2503.22963" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+                <a href="https://github.com/arclab-hku/SuperEIO" class="paper-link" target="_blank" rel="noopener">💻 Code</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    Event cameras asynchronously output low-latency event streams, promising for state estimation in high-speed motion and challenging lighting conditions. As opposed to frame-based cameras, the motion-dependent nature of event cameras presents persistent challenges in achieving robust event feature detection and matching. In recent years, learning-based approaches have demonstrated superior robustness over traditional handcrafted methods in feature detection and matching, particularly under aggressive motion and HDR scenarios. In this paper, we propose SuperEIO, a novel framework that leverages the learning-based event-only detection and IMU measurements to achieve event-inertial odometry. Our event-only feature detection employs a convolutional neural network under continuous event streams. Moreover, our system adopts the graph neural network to achieve event descriptor matching for loop closure. The proposed system utilizes TensorRT to accelerate the inference speed of deep networks, which ensures low-latency processing and robust real-time operation on resource-limited platforms. Besides, we evaluate our method extensively on multiple public datasets, demonstrating its superior accuracy and robustness compared to other state-of-the-art event-based methods.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="DEIO" data-title="DEIO: Deep Event Inertial Odometry" data-authors="Weipeng Guan, Fuling Lin, Peiyu Chen, Peng Lu" data-year="2025" data-tags='["Event-based Vision", "Deep Learning", "Monocular", "EIO", "6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, '-DEIO', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\DEIO.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">DEIO: Deep Event Inertial Odometry <span class="paper-year">(2025)</span></h2>
+              <p class="paper-authors">Weipeng Guan, Fuling Lin, Peiyu Chen, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Event-based Vision</span>
+                  <span class="paper-tag">Deep Learning</span>
+                  <span class="paper-tag">Monocular</span>
+                  <span class="paper-tag">EIO</span>
+                </div>
+              <div class="paper-links"><a href="https://arxiv.org/pdf/2411.03928" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://github.com/arclab-hku/DEIO" class="paper-link" target="_blank" rel="noopener">💻 Code</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    Event cameras are bio-inspired, motion-activated sensors that demonstrate great potential in handling challenging situations, such as fast motion and high-dynamic range. Despite their promise, existing event-based simultaneous localization and mapping (SLAM) approaches still face limited performance in real-world applications. On the other hand, state-of-the-art SLAM approaches that incorporate deep neural networks show impressive robustness and applicability. However, there is a lack of research on fusing learning-based event SLAM methods with IMU, which could be indispensable to push the event-based SLAM to large-scale, low-texture or complex scenarios. In this paper, we propose DEIO, the first monocular deep event-inertial odometry framework, which combines learning-based method with traditional nonlinear graph-based optimization. Specifically, we tightly integrate a trainable event-based differentiable bundle adjustment (e-DBA) with the IMU pre-integration in a patch-based co-visibility factor graph that employs keyframe-based sliding window optimization. Numerical Experiments in ten public challenge datasets demonstrate that our method can achieve superior performance compared with the image-based and event-based benchmarks.
+
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="LVI-GS" data-title="LVI-GS: Tightly-coupled LiDAR-Visual-Inertial SLAM using 3D Gaussian Splatting" data-authors="Huibin Zhao,Weipeng Guan, Peng Lu" data-year="2025" data-tags='["LiDAR", "3DGS", "Dense Mapping"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'LVI-GS', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\LVI-GS.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">LVI-GS: Tightly-coupled LiDAR-Visual-Inertial SLAM using 3D Gaussian Splatting <span class="paper-year">(2025)</span></h2>
+              <p class="paper-authors">Huibin Zhao,Weipeng Guan, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">LiDAR</span>
+                  <span class="paper-tag">3DGS</span>
+                  <span class="paper-tag">Dense Mapping</span>
+                </div>
+              <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/10926911" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://kwanwaipang.github.io/LVI-GS/" class="paper-link" target="_blank" rel="noopener">🌐 Project</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    3D Gaussian Splatting (3DGS) has shown its ability in rapid rendering and high-fidelity mapping. In this paper, we introduce LVI-GS, a tightly-coupled LiDAR-Visual-Inertial mapping framework with 3DGS, which leverages the complementary characteristics of LiDAR and image sensors to capture both geometric structures and visual details of 3D scenes. To this end, the 3D Gaussians are initialized from colourized LiDAR points and optimized using differentiable rendering. In order to achieve high-fidelity mapping, we introduce a pyramid-based training approach to effectively learn multilevel features and incorporate depth loss derived from LiDAR measurements to improve geometric feature perception. Through well-designed strategies for Gaussian-Map expansion, keyframe selection, thread management, and custom CUDA acceleration, our framework achieves real-time photo-realistic mapping. Numerical experiments are performed to evaluate the superior performance of our method compared to state-of-the-art 3D reconstruction systems. Videos of the evaluations can be found on our website: https://kwanwaipang.github.io/LVI-GS/.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="EVI-SAM" data-title="EVI-SAM: Robust, Real-time, Tightly-coupled Event-Visual-Inertial State Estimation and 3D Dense Mapping" data-authors="Weipeng Guan, Peiyu Chen, Huibin Zhao, Yu Wang, Peng Lu" data-year="2024" data-tags='["Event-based Vision", "Monocular", "EVIO", "Dense Mapping", "Feature-based Methods", "Direct-based Methods","6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'EVI-SAM', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\EVI-SAM.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">EVI-SAM: Robust, Real-time, Tightly-coupled Event-Visual-Inertial State Estimation and 3D Dense Mapping <span class="paper-year">(2024)</span></h2>
+              <p class="paper-authors">Weipeng Guan, Peiyu Chen, Huibin Zhao, Yu Wang, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Event-based Vision</span>
+                  <span class="paper-tag">Monocular</span>
+                  <span class="paper-tag">EVIO</span>
+                  <span class="paper-tag">Dense Mapping</span>
+                  <span class="paper-tag">Feature-based Methods</span>
+                  <span class="paper-tag">Direct-based Methods</span>
+                  <span class="paper-tag">6 DoF Pose Tracking</span>
+                </div>
+              <div class="paper-links"><a href="https://onlinelibrary.wiley.com/doi/10.1002/aisy.202400243" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    Event cameras demonstrate substantial potential in handling challenging situations, such as motion blur and high dynamic range. Herein, event–visual–inertial state estimation and 3D dense mapping (EVI-SAM) are introduced to tackle the problem of pose tracking and 3D dense reconstruction using the monocular event camera. A novel event-based hybrid tracking framework is designed to estimate the pose, leveraging the robustness of feature matching and the precision of direct alignment. Specifically, an event-based 2D–2D alignment is developed to construct the photometric constraint and tightly integrated with the event-based reprojection constraint. The mapping module recovers the dense and colorful depth of the scene through the image-guided event-based mapping method. Subsequently, the appearance, texture, and surface mesh of the 3D scene can be reconstructed by fusing the dense depth map from multiple viewpoints using truncated signed distance function fusion. To the best of knowledge, this is the first nonlearning work to realize event-based dense mapping. Numerical evaluations are performed on both publicly available datasets, which qualitatively and quantitatively demonstrate the superior performance of our method. EVI-SAM effectively balances accuracy and robustness while maintaining computational efficiency, showcasing superior pose tracking and dense mapping performance in challenging scenarios.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="ECMD" data-title="ECMD: An Event-Centric Multisensory Driving Dataset for SLAM" data-authors="Peiyu Chen, Weipeng Guan, Feng Huang, Yihan Zhong, Weisong Wen, Li-Ta Hsu, Peng Lu" data-year="2023" data-tags='["Event-based Vision", "Autonomous Driving"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'ECMD', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\ECMD.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">ECMD: An Event-Centric Multisensory Driving Dataset for SLAM <span class="paper-year">(2023)</span></h2>
+              <p class="paper-authors">Peiyu Chen, Weipeng Guan, Feng Huang, Yihan Zhong, Weisong Wen, Li-Ta Hsu, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Event-based Vision</span>
+                  <span class="paper-tag">Autonomous Driving</span>
+                </div>
+              <div class="paper-links"><a href="https://ieeexplore.ieee.org/abstract/document/10342726" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://arclab-hku.github.io/ecmd/" class="paper-link" target="_blank" rel="noopener">🌐 Project</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    Leveraging multiple sensors enhances complex environmental perception and increases resilience to varying luminance conditions and high-speed motion patterns, achieving precise localization and mapping. This paper proposes, ECMD, an event-centric multisensory dataset containing 81 sequences and covering over 200 km of various challenging driving scenarios including high-speed motion, repetitive scenarios, dynamic objects, etc. ECMD provides data from two sets of stereo event cameras with different resolutions (640×480, 346×260), stereo industrial cameras, an infrared camera, a top-installed mechanical LiDAR with two slanted LiDARs, two consumer-level GNSS receivers, and an onboard IMU. Meanwhile, the ground-truth of the vehicle was obtained using a centimeter-level high-accuracy GNSS-RTK/INS navigation system. All sensors are well-calibrated and temporally synchronized at the hardware level, with recording data simultaneously. We additionally evaluate several state-of-the-art SLAM algorithms for benchmarking visual and LiDAR SLAM and identifying their limitations.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="ESVIO" data-title="ESVIO：Event-based Stereo Visual Inertial Odometry" data-authors="Peiyu Chen, Weipeng Guan, Peng Lu" data-year="2023" data-tags='["Event-based Vision", "Stereo", "EIO","EVIO", "Feature-based Methods","Drone","6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'ESVIO', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\ESVIO.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">ESVIO：Event-based Stereo Visual Inertial Odometry <span class="paper-year">(2023)</span></h2>
+              <p class="paper-authors">Peiyu Chen, Weipeng Guan, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Stereo</span>
+                  <span class="paper-tag">EIO</span>
+                  <span class="paper-tag">EVIO</span>
+                  <span class="paper-tag">Feature-based Methods</span>
+                  <span class="paper-tag">6 DoF Pose Tracking</span>
+                  <span class="paper-tag">Drone</span>
+                </div>
+              <div class="paper-links"><a href="https://ieeexplore.ieee.org/abstract/document/10107754" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://github.com/arclab-hku/ESVIO" class="paper-link" target="_blank" rel="noopener">💻 Code</a>
+              <a href="https://kwanwaipang.github.io/File/Blogs/Poster/IROS2023_presentation.html" class="paper-link" target="_blank" rel="noopener">🎥 IROS2023</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                    Event cameras that asynchronously output low-latency event streams provide great opportunities for state estimation under challenging situations. Despite event-based visual odometry having been extensively studied in recent years, most of them are based on the monocular, while few research on stereo event vision. In this letter, we present ESVIO, the first event-based stereo visual-inertial odometry, which leverages the complementary advantages of event streams, standard images, and inertial measurements. Our proposed pipeline includes the ESIO (purely event-based) and ESVIO (event with image-aided), which achieves spatial and temporal associations between consecutive stereo event streams. A well-design back-end tightly-coupled fused the multi-sensor measurement to obtain robust state estimation. We validate that both ESIO and ESVIO have superior performance compared with other image-based and event-based baseline methods on public and self-collected datasets. Furthermore, we use our pipeline to perform onboard quadrotor flights under low-light environments. Autonomous driving data sequences and real-world large-scale experiments are also conducted to demonstrate long-term effectiveness. We highlight that this work is a real-time, accurate system that is aimed at robust state estimation under challenging environments.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="PL-EVIO" data-title="PL-EVIO: Robust Monocular Event-based Visual Inertial Odometry with Point and Line Features" data-authors="Weipeng Guan, Peiyu Chen, Yuhan Xie, Peng Lu" data-year="2023" data-tags='["Event-based Vision", "Monocular", "EIO","EVIO", "Feature-based Methods", "Drone", "6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'PL-EVIO', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\PL-EVIO.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">PL-EVIO: Robust Monocular Event-based Visual Inertial Odometry with Point and Line Features <span class="paper-year">(2023)</span></h2>
+              <p class="paper-authors">Weipeng Guan, Peiyu Chen, Yuhan Xie, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Monocular</span>
+                  <span class="paper-tag">EIO</span>
+                  <span class="paper-tag">EVIO</span>
+                  <span class="paper-tag">Feature-based Methods</span>                  
+                  <span class="paper-tag">Drone</span>
+                  <span class="paper-tag">6 DoF Pose Tracking</span>
+                </div>
+              <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/10287884" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://kwanwaipang.github.io/File/Blogs/Poster/ICRA2024_presentation.html" class="paper-link" target="_blank" rel="noopener">🎥 ICRA2024</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                  Robust state estimation in challenge situations is still an unsolved problem, especially achieving onboard pose feedback control for aggressive motion. In this paper, we propose robust and real-time event-based visual-inertial odometry (VIO) that incorporates event, image, and inertial measurements. Our approach utilizes line-based event features to provide additional structure and constraint information in human-made scenes, while point-based event and image features complement each other through well-designed feature management. To achieve reliable state estimation, we tightly couple the point-based and line-based visual residuals from the event camera, the point-based visual residual from the standard camera, and the residual from IMU pre-integration using a keyframe-based graph optimization framework. Experiments in the public benchmark datasets show that our method can achieve superior performance compared with the state-of-the-art image-based or event-based VIO. Furthermore, we demonstrate the effectiveness of our pipeline through onboard closed-loop quadrotor aggressive flight and large-scale outdoor experiments. Videos of the evaluations can be found on our website: https://youtu.be/KnWZ4anBMK4. Note to Practitioners—Driven by the need for real-time closed-loop control for drones under aggressive motion and broad illumination environments, many existing VIO systems fail to meet these requirements due to the inherent limitations of standard cameras. Event cameras are bio-inspired sensors that capture pixel-level illumination changes instead of the intensity image with a fixed frame rate, which can provide reliable visual perception during high-speed motions and in high dynamic range scenarios. Therefore, developing state estimation algorithms based on event cameras offers exciting opportunities for robotics. However, adopting event cameras is challenging due to the event streams being composed of asynchronous events which are fundamentally different from the synchronous intensity images. Moreover, event cameras output minimal information or even noise when the relative motion between the camera and the scene is limited, such as in a still state, while standard cameras can provide rich perception information in most scenarios. In this paper, we propose a robust, high-accurate, and real-time optimization-based monocular event-based VIO framework that tightly fuses the event, image, and IMU measurement together. Owing to the well-designed framework and good feature management, our system can provide robust and reliable state estimation in challenging environments. The efficiency of our system is adequate to achieve real-time operation on platforms with limited resources, such as providing onboard pose feedback for quadrotor flights.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="papers-grid">
+        <div class="paper-row" data-id="mono-eio" data-title="Monocular Event Visual Inertial Odometry based on Event-corner using Sliding Windows Graph-based Optimization" data-authors="Weipeng Guan, Peng Lu" data-year="2022" data-tags='["Event-based Vision","Monocular", "EIO", "Feature-based Methods","Drone", "6 DoF Pose Tracking"]'>
+            <div class="paper-card">
+              <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'mono-eio', this)">
+              <div class="paper-number"></div>
+              <div class="paper-thumbnail">
+              <img data-src="static\img\mono-eio.png" data-fallback="None" alt="Paper first page" class="lazy" loading="lazy"/>
+              </div>
+              <div class="paper-content">
+              <h2 class="paper-title">Monocular Event Visual Inertial Odometry based on Event-corner using Sliding Windows Graph-based Optimization <span class="paper-year">(2022)</span></h2>
+              <p class="paper-authors">Weipeng Guan, Peng Lu</p>
+                <div class="paper-tags">
+                  <span class="paper-tag">Monocular</span>
+                  <span class="paper-tag">EIO</span>
+                  <span class="paper-tag">Feature-based Methods</span>
+                  <span class="paper-tag">Drone</span>
+                  <span class="paper-tag">6 DoF Pose Tracking</span>
+                </div>
+              <div class="paper-links"><a href="https://ieeexplore.ieee.org/abstract/document/9981970" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              <a href="https://kwanwaipang.github.io/File/Blogs/Poster/IROS2022_presentation.html" class="paper-link" target="_blank" rel="noopener">🎥 IROS2022</a>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
+                <div class="paper-abstract">  
+                  <div class="content has-text-justified">               
+                  Event cameras are biologically-inspired vision sensors that capture pixel-level illumination changes instead of the intensity image at a fixed frame rate. They offer many advantages over the standard cameras, such as high dynamic range, high temporal resolution (low latency), no motion blur, etc. Therefore, developing state estimation algorithms based on event cameras offers exciting opportunities for autonomous systems and robots. In this paper, we propose monocular visual-inertial odometry for event cameras based on event-corner feature detection and matching with well-designed feature management. More specifically, two different kinds of event representations based on time surface are designed to realize event-corner feature tracking (for front-end incremental estimation) and matching (for loop closure detection). Furthermore, the proposed event representations are used to set mask for detecting the event-corner feature based on the raw event-stream, which ensures the uniformly distributed and spatial consistency characteristic of the event-corner feature. Finally, a tightly coupled, graph-based optimization framework is designed to obtain high-accurate state estimation through fusing pre-integrated IMU measurements and event-corner observations. We validate quantitatively the performance of our system on different resolution event cameras: DAVIS240C (240*180, public dataset, achieve state-of-the-art), DAVIS346 (346*240, real-test), DVXplorer (640*480 real-test). Furthermore, we demonstrate qualitatively the accuracy, robustness, loop closure, and re-localization performance of our framework on different large-scale datasets, and an autonomous quadrotor flight using our Event Visual-inertial Odometry (EVIO) framework. Videos of all the evaluations are presented on the project website.
+                </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--/ Paper Cards -->
+    </div>
+
+
+  </div>
+</section>
+
+
+<!-- 引用格式 -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      ******
+    </code></pre>
+  </div>
+</section>
+
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            <br>
+            We sincerely thank for the website template<sup><a href="https://github.com/nerfies/nerfies.github.io" target="_blank">1</a>, <a href="https://github.com/MrNeRF/awesome-3D-gaussian-splatting" target="_blank">2</a></sup>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+
+</body>
+</html>
