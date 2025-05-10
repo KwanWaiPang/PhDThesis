@@ -169,7 +169,7 @@
               </span>
               
               <span class="link-block">
-                <a href="./static/Turnitin_Originality_Report.html"
+                <a href="./static/Turnitin Originality Report.pdf"
                    target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -211,7 +211,33 @@
 
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Simultaneous Localization and Mapping (SLAM) serves as a foundational technology for emerging applications, such as robotics, autonomous driving, embodied intelligence, and augmented / virtual reality.
+          However, traditional image-based SLAM systems still struggle with reliable pose estimation and 3D reconstruction under challenging conditions involving high-speed motion and extreme illumination variations. 
+          Event cameras, also known as dynamic vision sensors, have recently emerged as a promising alternative to standard cameras for visual perception. 
+          Instead of capturing intensity images at a fixed frame rate, event cameras asynchronously measure per-pixel brightness changes, producing a stream of events that encode the time, pixel location, and sign of the brightness changes.
+          They offer attractive advantages, including 
+          high temporal resolution (MHz-level),
+          high dynamic range (HDR, 140 dB),
+          low latency (microsecond),
+          no motion blur, and low power consumption.
+          However, integrating event cameras into SLAM systems presents significant challenges due to the fundamentally different characteristics of asynchronous event streams compared to conventional intensity images, and new paradigm shifts are required.
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This dissertation presents innovative solutions and advancements for event-based SLAM. 
+          It begins with the development of Mono-EIO, a monocular event-inertial odometry framework that tightly integrates event-corner features with IMU preintegration. 
+          These event-corner features are temporally and spatially associated using novel event-based representations with a spatial-temporal and exponential decay kernel, and are subsequently incorporated into a keyframe-based sliding window optimization framework.
+          Mono-EIO achieves high-accuracy, real-time 6-DoF ego-motion estimation even under aggressive motion and HDR conditions.
+          Building upon this foundation, the thesis introduces PL-EVIO, an event-based visual-inertial odometry framework that combines event cameras with standard cameras to enhance robustness.
+          The PL-EVIO utilizes line-based event features to provide additional structural constraints in human-made environments, while point-based event and image features are effectively managed to complement each other.
+          This framework has been successfully applied to quadrotor onboard pose feedback control, enabling complex maneuvers such as flipping and operation in low-light conditions.
+          Additionally, the thesis includes ESVIO, the first stereo event-based visual inertial odometry framework.
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The thesis also presents DEIO, a learning-optimization-combined framework that tightly coupled fuses the learning-based event data association with the IMU measurements within graph-based optimization.
+          To the best of our knowledge, DEIO is the first learning-based event-inertial odometry, outperforming over 20 vision-based methods across 10 challenging real-world benchmarks.
+          Finally, the thesis proposes EVI-SAM, a full SLAM system that tackles both 6-DoF pose tracking and 3D dense mapping using a monocular event camera. 
+          Its tracking module is the first hybrid approach that integrates both direct-based and feature-based methods within an event-based framework. 
+          The mapping module, on the other hand, is the first to achieve event-based dense and textured 3D reconstruction without GPU acceleration by employing a non-learning approach.
+          This method not only successfully recovers 3D scenes structure under aggressive motions but also demonstrates superior performance compared to image-based NeRF or RGB-D cameras.
+          Through these contributions, this dissertation significantly advances SLAM, offering robust solutions and paving the way for future research and applications in event camera.
         </div>
         <!--/ Abstract. -->
 
