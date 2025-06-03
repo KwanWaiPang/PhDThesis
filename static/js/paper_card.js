@@ -546,6 +546,13 @@ window.toggleAbstract = function(button) {
   button.innerHTML = isShowing ? '📖 Hide Abstract' : '📖 Show Abstract';
 };
 
+//用于可视化专利证书的
+window.toggleCertificate = function(button) {
+  const abstract = button.nextElementSibling;
+  const isShowing = abstract.classList.toggle('show');
+  button.innerHTML = isShowing ? '📕 Hide Certificate' : '📕 Show Certificate';
+};
+
 // Initialize LazyLoad
 window.lazyLoadInstance = new LazyLoad({
   elements_selector: ".lazy",
