@@ -550,7 +550,7 @@ window.toggleAbstract = function(button) {
 window.toggleCertificate = function(button) {
   const abstract = button.nextElementSibling;
   const isShowing = abstract.classList.toggle('show');
-  button.innerHTML = isShowing ? '📕 Hide Certificate' : '📕 Show Certificate';
+  button.innerHTML = isShowing ? '📕 Hide Certificate' : '📕 Certificate';
 };
 
 // Initialize LazyLoad
