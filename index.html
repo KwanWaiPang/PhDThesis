@@ -621,8 +621,13 @@
               <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
                 <div class="paper-abstract">  
                   <div class="content has-text-justified">               
-                    Event cameras are bio-inspired, motion-activated sensors that demonstrate great potential in handling challenging situations, such as fast motion and high-dynamic range. Despite their promise, existing event-based simultaneous localization and mapping (SLAM) approaches still face limited performance in real-world applications. On the other hand, state-of-the-art SLAM approaches that incorporate deep neural networks show impressive robustness and applicability. However, there is a lack of research on fusing learning-based event SLAM methods with IMU, which could be indispensable to push the event-based SLAM to large-scale, low-texture or complex scenarios. In this paper, we propose DEIO, the first monocular deep event-inertial odometry framework, which combines learning-based method with traditional nonlinear graph-based optimization. Specifically, we tightly integrate a trainable event-based differentiable bundle adjustment (e-DBA) with the IMU pre-integration in a patch-based co-visibility factor graph that employs keyframe-based sliding window optimization. Numerical Experiments in ten public challenge datasets demonstrate that our method can achieve superior performance compared with the image-based and event-based benchmarks.
-
+                  Event cameras show great potential for visual odometry (VO) in handling challenging situations, such as fast motion and high dynamic range. 
+                  Despite this promise, the sparse and motion-dependent characteristics of event data continue to limit the performance of feature-based or direct-based data association methods in practical applications. 
+                  To address these limitations, we propose Deep Event Inertial Odometry (DEIO), the first monocular learning-based event-inertial framework, which combines a learning-based method with traditional nonlinear graph-based optimization. 
+                  Specifically, an event-based recurrent network is adopted to provide accurate and sparse associations of event patches over time.
+                  DEIO further integrates it with the IMU to recover up-to-scale pose and provide robust state estimation.
+                  The Hessian information derived from the learned differentiable bundle adjustment (DBA) is utilized to optimize the co-visibility factor graph, which tightly incorporates event patch correspondences and IMU pre-integration within a keyframe-based sliding window.
+                  Comprehensive validations demonstrate that DEIO achieves superior performance on 10 challenging public benchmarks compared with more than 20 state-of-the-art methods. 
                 </div> 
                 </div>
               </div>
@@ -632,7 +637,7 @@
       </div>
 
       <div class="papers-grid">
-        <div class="paper-row" data-id="SuperEIO" data-title="SuperEIO: Self-Supervised Event Feature Learning for Event Inertial Odometry" data-authors="Peiyu Chen, Fuling Lin,Weipeng Guan, Peng Lu" data-year="2025" data-tags='["Event-based Vision", "Deep Learning", "Feature-based Methods", "EIO", "Monocular", "6 DoF Pose Tracking"]'>
+        <div class="paper-row" data-id="SuperEIO" data-title="SuperEIO: Self-Supervised Event Feature Learning for Event Inertial Odometry" data-authors="Peiyu Chen, Fuling Lin,Weipeng Guan, Yi Luo, Peng Lu" data-year="2025" data-tags='["Event-based Vision", "Deep Learning", "Feature-based Methods", "EIO", "Monocular", "6 DoF Pose Tracking"]'>
             <div class="paper-card">
               <input type="checkbox" class="selection-checkbox" onclick="handleCheckboxClick(event, 'SuperEIO', this)">
               <div class="paper-number"></div>
@@ -641,7 +646,7 @@
               </div>
               <div class="paper-content">
               <h2 class="paper-title">SuperEIO: Self-Supervised Event Feature Learning for Event Inertial Odometry <span class="paper-year">(2025)</span></h2>
-              <p class="paper-authors">Peiyu Chen, Fuling Lin,Weipeng Guan, Peng Lu</p>
+              <p class="paper-authors">Peiyu Chen, Fuling Lin, Weipeng Guan, Yi Luo, Peng Lu</p>
                 <div class="paper-tags">
                   <span class="paper-tag">Event-based Vision</span>
                   <span class="paper-tag">Deep Learning</span>
@@ -652,7 +657,15 @@
               <button class="abstract-toggle" onclick="toggleAbstract(this)">📖 Show Abstract</button>
                 <div class="paper-abstract">  
                   <div class="content has-text-justified">               
-                    Event cameras asynchronously output low-latency event streams, promising for state estimation in high-speed motion and challenging lighting conditions. As opposed to frame-based cameras, the motion-dependent nature of event cameras presents persistent challenges in achieving robust event feature detection and matching. In recent years, learning-based approaches have demonstrated superior robustness over traditional handcrafted methods in feature detection and matching, particularly under aggressive motion and HDR scenarios. In this paper, we propose SuperEIO, a novel framework that leverages the learning-based event-only detection and IMU measurements to achieve event-inertial odometry. Our event-only feature detection employs a convolutional neural network under continuous event streams. Moreover, our system adopts the graph neural network to achieve event descriptor matching for loop closure. The proposed system utilizes TensorRT to accelerate the inference speed of deep networks, which ensures low-latency processing and robust real-time operation on resource-limited platforms. Besides, we evaluate our method extensively on multiple public datasets, demonstrating its superior accuracy and robustness compared to other state-of-the-art event-based methods.
+                    Event cameras asynchronously output low-latency event streams, promising for state estimation in complex conditions.
+                    The motion-dependent nature of event cameras presents persistent challenges in achieving robust event feature detection and matching.
+                    Recent learning-based approaches have demonstrated superior robustness over traditional handcrafted methods, particularly under aggressive motions and HDR scenarios.
+                    This paper proposes SuperEIO, a novel framework that leverages a learning-based event-only detector and IMU measurements for event-inertial odometry.
+                    Our event-only feature detector employs a convolutional neural network on continuous event streams, while a graph neural network achieves event descriptor matching for loop closure.
+                    We accelerate network inference with TensorRT, ensuring low-latency, real-time operation on resource-constrained devices.
+                    Extensive evaluations on multiple public benchmarks demonstrate its superior accuracy and robustness compared to advanced event-based methods.
+                    Moreover, we conduct a large-scale real-world experiment on an edge handheld platform to demonstrate long-term effectiveness.
+                    Our pipeline is open-sourced to facilitate research in the field: \url{https://github.com/arclab-hku/SuperEIO}.
                 </div> 
                 </div>
               </div>
